@@ -29,3 +29,28 @@ variable "db_ami" {
 variable "metabase_ami" {
   description = "AMI ID for the metabase EC2 instance"
 }
+
+variable "aurora_postgres_engine_version" {
+  description = "The engine version of the AWS Aurora PostgreSQL cluster"
+  default     = "14.5"  # 可根据需要修改默认值
+}
+
+variable "aurora_postgres_instance_type" {
+  description = "The instance type of the AWS Aurora PostgreSQL cluster"
+  default     = "db.t3.medium"  # 可根据需要修改默认值
+}
+
+variable "aurora_postgres_db_name" {
+  description = "The name of the database in the AWS Aurora PostgreSQL cluster"
+  default     = "benchmark_db"  # 可根据需要修改默认值
+}
+
+variable "aurora_postgres_master_username" {
+  description = "The master username for the AWS Aurora PostgreSQL cluster"
+  default     = "dbadmin"  # 可根据需要修改默认值
+}
+
+variable "aurora_postgres_master_password" {
+  description = "The master password for the AWS Aurora PostgreSQL cluster"
+  sensitive   = true
+}
