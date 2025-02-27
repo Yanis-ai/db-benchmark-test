@@ -19,7 +19,6 @@ module "ec2-key-pair" {
 module "security-group" {
   source = "./modules/security-group"
   vpc_id = module.vpc.vpc_id
-  key_pair_name = module.ec2-key-pair.key_pair_name
 }
 
 module "internet-gateway" {
